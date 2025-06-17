@@ -20,7 +20,9 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'inter': ['Inter', 'sans-serif'],
+				'playfair': ['Playfair Display', 'serif'],
+				'crimson': ['Crimson Text', 'serif'],
+				'cormorant': ['Cormorant Garamond', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -66,30 +68,16 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// TrendPilot custom colors
-				'trend-teal': {
-					50: '#f0fdfa',
-					100: '#ccfbf1',
-					200: '#99f6e4',
-					300: '#5eead4',
-					400: '#2dd4bf',
-					500: '#14b8a6',
-					600: '#0d9488',
-					700: '#0f766e',
-					800: '#115e59',
-					900: '#134e4a',
-				},
-				'trend-pink': {
-					50: '#fdf2f8',
-					100: '#fce7f3',
-					200: '#fbcfe8',
-					300: '#f9a8d4',
-					400: '#f472b6',
-					500: '#ec4899',
-					600: '#db2777',
-					700: '#be185d',
-					800: '#9d174d',
-					900: '#831843',
+				// Vintage 90s luxury colors
+				'vintage': {
+					'charcoal': '#1C1C1E',
+					'navy': '#0F1419',
+					'oxblood': '#4A0E0E',
+					'forest': '#1B2D1B',
+					'gold': '#D4AF37',
+					'ivory': '#F8F6F0',
+					'cream': '#F5F5DC',
+					'pewter': '#96A8A8'
 				}
 			},
 			borderRadius: {
@@ -116,10 +104,10 @@ export default {
 				},
 				'glow': {
 					'0%, 100%': {
-						boxShadow: '0 0 5px rgba(20, 184, 166, 0.3)'
+						boxShadow: '0 0 5px rgba(212, 175, 55, 0.3)'
 					},
 					'50%': {
-						boxShadow: '0 0 20px rgba(20, 184, 166, 0.6), 0 0 30px rgba(20, 184, 166, 0.4)'
+						boxShadow: '0 0 20px rgba(212, 175, 55, 0.6), 0 0 30px rgba(212, 175, 55, 0.4)'
 					}
 				}
 			},
@@ -127,6 +115,9 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'glow': 'glow 2s ease-in-out infinite alternate'
+			},
+			textShadow: {
+				'vintage': '1px 1px 2px rgba(0, 0, 0, 0.8)',
 			}
 		}
 	},

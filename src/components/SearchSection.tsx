@@ -1,13 +1,13 @@
 
 import { useState } from 'react';
-import { Search, Plus, Filter } from 'lucide-react';
+import { Search, Plus, Filter, Target } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 
 export const SearchSection = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [trackedTerms, setTrackedTerms] = useState(['denim skirt', 'cottagecore dress']);
+  const [trackedTerms, setTrackedTerms] = useState(['leather trench coat', 'vintage silk scarves']);
 
   const handleAddTerm = () => {
     if (searchTerm.trim() && !trackedTerms.includes(searchTerm.trim())) {
@@ -21,44 +21,52 @@ export const SearchSection = () => {
   };
 
   return (
-    <div className="trend-card p-6 space-y-4">
+    <div className="vintage-card p-8 space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-lg font-semibold text-foreground">Track Fashion Terms</h2>
-        <Button variant="outline" size="sm" className="border-border/50">
+        <div>
+          <h2 className="text-xl font-playfair font-semibold text-vintage-ivory">Intelligence Tracking</h2>
+          <p className="text-sm font-cormorant text-vintage-pewter mt-1">Monitor fashion market signals</p>
+        </div>
+        <Button variant="outline" size="sm" className="border-vintage-oxblood/50 bg-vintage-navy/50 text-vintage-pewter hover:bg-vintage-forest/30 hover:text-vintage-gold font-cormorant">
           <Filter className="w-4 h-4 mr-2" />
-          Filters
+          Configure Filters
         </Button>
       </div>
 
-      <div className="flex space-x-2">
+      <div className="vintage-divider"></div>
+
+      <div className="flex space-x-4">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-vintage-pewter" />
           <Input
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="e.g. chunky knit sweater, y2k accessories..."
-            className="pl-10 bg-background/50 border-border/50 focus:border-trend-teal-500 focus:ring-trend-teal-500/20"
+            placeholder="e.g. cashmere turtleneck, wool blazer oversized..."
+            className="pl-12 h-12 bg-vintage-navy/30 border-vintage-oxblood/30 focus:border-vintage-gold focus:ring-vintage-gold/20 text-vintage-ivory font-cormorant vintage-frame"
             onKeyPress={(e) => e.key === 'Enter' && handleAddTerm()}
           />
         </div>
         <Button 
           onClick={handleAddTerm}
-          className="trend-glow bg-trend-teal-600 hover:bg-trend-teal-700 text-white"
+          className="vintage-glow bg-vintage-gold hover:bg-vintage-gold/90 text-vintage-charcoal font-cormorant font-semibold h-12 px-6"
         >
           <Plus className="w-4 h-4 mr-2" />
-          Track
+          Track Signal
         </Button>
       </div>
 
       {trackedTerms.length > 0 && (
-        <div className="space-y-2">
-          <p className="text-sm text-muted-foreground">Currently tracking:</p>
-          <div className="flex flex-wrap gap-2">
+        <div className="space-y-4">
+          <div className="flex items-center space-x-2">
+            <Target className="w-4 h-4 text-vintage-gold" />
+            <p className="text-sm font-cormorant text-vintage-pewter">Active surveillance targets:</p>
+          </div>
+          <div className="flex flex-wrap gap-3">
             {trackedTerms.map((term) => (
               <Badge
                 key={term}
                 variant="secondary"
-                className="bg-secondary/50 text-secondary-foreground hover:bg-secondary cursor-pointer"
+                className="bg-vintage-oxblood/30 text-vintage-ivory hover:bg-vintage-oxblood/50 cursor-pointer font-cormorant px-4 py-2 vintage-frame vintage-glow transition-all duration-300"
                 onClick={() => handleRemoveTerm(term)}
               >
                 {term} ×
