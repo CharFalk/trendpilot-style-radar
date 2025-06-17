@@ -3,48 +3,46 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the vintage 90s luxury design system */
-
 @layer base {
   :root {
-    --background: 28 28 30; /* vintage-charcoal */
-    --foreground: 248 246 240; /* vintage-ivory */
+    --background: 255 255 255; /* clean white */
+    --foreground: 15 23 42; /* clean-gray-900 */
 
-    --card: 15 20 25; /* vintage-navy */
-    --card-foreground: 248 246 240;
+    --card: 255 255 255; /* clean white */
+    --card-foreground: 15 23 42;
 
-    --popover: 15 20 25;
-    --popover-foreground: 248 246 240;
+    --popover: 255 255 255;
+    --popover-foreground: 15 23 42;
 
-    --primary: 212 175 55; /* vintage-gold */
-    --primary-foreground: 28 28 30;
+    --primary: 59 130 246; /* clean-blue */
+    --primary-foreground: 255 255 255;
 
-    --secondary: 74 14 14; /* vintage-oxblood */
-    --secondary-foreground: 248 246 240;
+    --secondary: 241 245 249; /* clean-gray-100 */
+    --secondary-foreground: 51 65 85; /* clean-gray-700 */
 
-    --muted: 27 45 27; /* vintage-forest */
-    --muted-foreground: 150 168 168; /* vintage-pewter */
+    --muted: 248 250 252; /* clean-gray-50 */
+    --muted-foreground: 100 116 139; /* clean-gray-500 */
 
-    --accent: 212 175 55; /* vintage-gold */
-    --accent-foreground: 28 28 30;
+    --accent: 241 245 249; /* clean-gray-100 */
+    --accent-foreground: 15 23 42;
 
-    --destructive: 74 14 14;
-    --destructive-foreground: 248 246 240;
+    --destructive: 239 68 68; /* clean-red */
+    --destructive-foreground: 255 255 255;
 
-    --border: 74 14 14; /* vintage-oxblood subtle */
-    --input: 27 45 27; /* vintage-forest */
-    --ring: 212 175 55; /* vintage-gold */
+    --border: 226 232 240; /* clean-gray-200 */
+    --input: 226 232 240;
+    --ring: 59 130 246; /* clean-blue */
 
-    --radius: 0.375rem; /* More conservative radius */
+    --radius: 0.5rem;
 
-    --sidebar-background: 15 20 25;
-    --sidebar-foreground: 248 246 240;
-    --sidebar-primary: 212 175 55;
-    --sidebar-primary-foreground: 28 28 30;
-    --sidebar-accent: 27 45 27;
-    --sidebar-accent-foreground: 248 246 240;
-    --sidebar-border: 74 14 14;
-    --sidebar-ring: 212 175 55;
+    --sidebar-background: 255 255 255;
+    --sidebar-foreground: 15 23 42;
+    --sidebar-primary: 59 130 246;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 241 245 249;
+    --sidebar-accent-foreground: 15 23 42;
+    --sidebar-border: 226 232 240;
+    --sidebar-ring: 59 130 246;
   }
 }
 
@@ -54,65 +52,41 @@
   }
 
   body {
-    @apply bg-background text-foreground font-crimson;
+    @apply bg-background text-foreground font-ibm;
     font-feature-settings: "liga", "kern";
-    background-image: 
-      radial-gradient(circle at 25% 25%, rgba(74, 14, 14, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(27, 45, 27, 0.1) 0%, transparent 50%);
   }
 }
 
 @layer components {
-  .vintage-glow {
-    @apply transition-all duration-500;
+  .modern-card {
+    @apply bg-white border border-clean-gray-200 rounded-lg shadow-card;
   }
   
-  .vintage-glow:hover {
+  .modern-card:hover {
     @apply shadow-lg;
-    box-shadow: 
-      0 8px 32px rgba(212, 175, 55, 0.15), 
-      0 0 0 1px rgba(212, 175, 55, 0.2),
-      inset 0 1px 0 rgba(248, 246, 240, 0.1);
   }
   
-  .vintage-card {
-    @apply bg-card/90 backdrop-blur-sm border border-border/30 rounded-md;
-    background-image: 
-      linear-gradient(135deg, rgba(212, 175, 55, 0.02) 0%, transparent 100%);
-    box-shadow: 
-      0 4px 12px rgba(0, 0, 0, 0.4),
-      inset 0 1px 0 rgba(248, 246, 240, 0.05);
-  }
-  
-  .vintage-divider {
-    @apply border-t border-vintage-oxblood/30;
-    background: linear-gradient(90deg, 
-      transparent 0%, 
-      rgba(212, 175, 55, 0.3) 50%, 
-      transparent 100%);
-    height: 1px;
-    border: none;
-  }
-
-  .vintage-frame {
-    @apply border border-vintage-gold/20 bg-gradient-to-br from-vintage-navy to-vintage-charcoal;
-    box-shadow: 
-      inset 0 1px 2px rgba(212, 175, 55, 0.1),
-      0 2px 8px rgba(0, 0, 0, 0.3);
-  }
-
   .trend-badge-rising {
-    @apply bg-vintage-forest text-vintage-gold border border-vintage-gold/30;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    @apply bg-clean-green/10 text-clean-green border border-clean-green/20 font-mono;
   }
 
   .trend-badge-steady {
-    @apply bg-vintage-oxblood/50 text-vintage-ivory border border-vintage-pewter/30;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    @apply bg-clean-blue/10 text-clean-blue border border-clean-blue/20 font-mono;
   }
 
   .trend-badge-declining {
-    @apply bg-vintage-charcoal text-vintage-pewter border border-vintage-pewter/30;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    @apply bg-clean-red/10 text-clean-red border border-clean-red/20 font-mono;
+  }
+
+  .data-divider {
+    @apply border-t border-clean-gray-200 my-4;
+  }
+
+  .script-title {
+    @apply font-dancing text-4xl font-semibold text-clean-gray-800;
+  }
+
+  .tech-label {
+    @apply font-ibm font-medium text-clean-gray-600 uppercase tracking-wide text-xs;
   }
 }

@@ -16,11 +16,11 @@ export const TrendingSidebar = () => {
   const getVelocityIcon = (status: string) => {
     switch (status) {
       case 'rising':
-        return <ArrowUp className="w-3 h-3 text-vintage-gold" />;
+        return <ArrowUp className="w-3 h-3 text-clean-green" />;
       case 'declining':
-        return <ArrowDown className="w-3 h-3 text-vintage-pewter" />;
+        return <ArrowDown className="w-3 h-3 text-clean-red" />;
       default:
-        return <Minus className="w-3 h-3 text-vintage-ivory" />;
+        return <Minus className="w-3 h-3 text-clean-blue" />;
     }
   };
 
@@ -38,21 +38,21 @@ export const TrendingSidebar = () => {
   const getVelocityColor = (status: string) => {
     switch (status) {
       case 'rising':
-        return 'text-vintage-gold';
+        return 'text-clean-green';
       case 'declining':
-        return 'text-vintage-pewter';
+        return 'text-clean-red';
       default:
-        return 'text-vintage-ivory';
+        return 'text-clean-blue';
     }
   };
 
   return (
-    <div className="w-96 h-screen bg-card/80 vintage-frame p-8 overflow-y-auto">
+    <div className="w-96 h-screen bg-white border-l border-clean-gray-200 shadow-soft p-8 overflow-y-auto">
       <div className="flex items-center space-x-3 mb-8">
-        <TrendingUp className="w-6 h-6 text-vintage-gold" />
+        <TrendingUp className="w-6 h-6 text-clean-blue" />
         <div>
-          <h2 className="text-xl font-playfair font-semibold text-vintage-ivory">Market Intelligence</h2>
-          <p className="text-sm font-cormorant text-vintage-pewter tracking-wide">Current Week Analysis</p>
+          <h2 className="text-xl font-ibm font-semibold text-clean-gray-800">Market Intelligence</h2>
+          <p className="tech-label">Current Week Analysis</p>
         </div>
       </div>
 
@@ -60,29 +60,29 @@ export const TrendingSidebar = () => {
         {trendingTerms.map((item, index) => (
           <div
             key={item.term}
-            className="group p-5 vintage-card hover:bg-vintage-navy/40 transition-all duration-300 cursor-pointer"
+            className="group p-5 modern-card hover:bg-clean-gray-50 transition-all duration-300 cursor-pointer"
           >
             <div className="flex items-start justify-between mb-3">
               <div className="flex items-center space-x-3">
-                <span className="text-sm font-cormorant text-vintage-pewter font-medium">
+                <span className="text-sm font-mono text-clean-gray-400 font-medium">
                   #{String(index + 1).padStart(2, '0')}
                 </span>
                 {getVelocityIcon(item.status)}
               </div>
-              <span className={`text-sm font-crimson font-semibold ${getVelocityColor(item.status)}`}>
+              <span className={`text-sm font-mono font-semibold ${getVelocityColor(item.status)}`}>
                 {item.velocity}
               </span>
             </div>
             
-            <h4 className="font-crimson font-semibold text-vintage-ivory group-hover:text-vintage-gold transition-colors duration-300 mb-3 leading-tight">
+            <h4 className="font-ibm font-semibold text-clean-gray-800 group-hover:text-clean-blue transition-colors duration-300 mb-3 leading-tight">
               {item.term}
             </h4>
             
             <div className="flex items-center justify-between">
-              <span className="text-xs font-cormorant text-vintage-pewter bg-vintage-oxblood/20 px-3 py-1 rounded-sm border border-vintage-oxblood/30">
+              <span className="tech-label bg-clean-gray-100 px-3 py-1 rounded-md border border-clean-gray-200">
                 {item.category}
               </span>
-              <span className={`text-xs font-cormorant px-2 py-1 rounded-sm ${getStatusBadge(item.status)}`}>
+              <span className={`text-xs font-mono px-2 py-1 rounded-md ${getStatusBadge(item.status)}`}>
                 {item.status.charAt(0).toUpperCase() + item.status.slice(1)}
               </span>
             </div>
@@ -90,24 +90,24 @@ export const TrendingSidebar = () => {
         ))}
       </div>
 
-      <div className="mt-10 p-6 vintage-frame bg-gradient-to-br from-vintage-oxblood/20 to-vintage-forest/20">
-        <h3 className="text-base font-playfair font-semibold text-vintage-gold mb-4">Intelligence Summary</h3>
-        <div className="space-y-3 text-sm font-cormorant text-vintage-ivory">
+      <div className="mt-10 p-6 modern-card bg-clean-gray-50">
+        <h3 className="text-base font-ibm font-semibold text-clean-blue mb-4">Intelligence Summary</h3>
+        <div className="space-y-3 text-sm font-ibm text-clean-gray-700">
           <div className="flex justify-between items-center">
-            <span className="text-vintage-pewter">Active Surveillance:</span>
-            <span className="text-vintage-gold font-semibold">1,247 terms</span>
+            <span className="tech-label">Active Surveillance:</span>
+            <span className="text-clean-blue font-mono font-semibold">1,247 terms</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-vintage-pewter">Rising Trends:</span>
-            <span className="text-vintage-gold font-semibold">89</span>
+            <span className="tech-label">Rising Trends:</span>
+            <span className="text-clean-green font-mono font-semibold">89</span>
           </div>
-          <div className="vintage-divider my-3"></div>
+          <div className="data-divider"></div>
           <div className="flex justify-between items-center">
-            <span className="text-vintage-pewter flex items-center">
+            <span className="tech-label flex items-center">
               <Clock className="w-3 h-3 mr-1" />
               Last Updated:
             </span>
-            <span className="text-vintage-ivory">3 min ago</span>
+            <span className="text-clean-gray-600 font-mono">3 min ago</span>
           </div>
         </div>
       </div>
