@@ -1,114 +1,92 @@
 
-import { TrendingUp, ArrowUp, ArrowDown, Minus, Clock } from 'lucide-react';
+import { TrendingUp, Eye, Calendar, Target } from 'lucide-react';
+
+const trendingItems = [
+  { name: 'Pattern Base', velocity: '+127%', status: 'rising', volume: '2.4K' },
+  { name: 'minimalist wardrobe', velocity: '+89%', status: 'rising', volume: '1.8K' },
+  { name: 'vintage accessories', velocity: '+45%', status: 'steady', volume: '956' },
+  { name: 'sustainable luxury', velocity: '-12%', status: 'declining', volume: '743' },
+  { name: 'capsule collection', velocity: '+67%', status: 'rising', volume: '1.2K' },
+];
 
 export const TrendingSidebar = () => {
-  const trendingTerms = [
-    { term: 'leather trench coat', velocity: '+127%', status: 'rising', category: 'Outerwear' },
-    { term: 'vintage silk scarves', velocity: '+89%', status: 'rising', category: 'Accessories' },
-    { term: 'wool blazer oversized', velocity: '+56%', status: 'rising', category: 'Tailoring' },
-    { term: 'cashmere turtleneck', velocity: '+12%', status: 'steady', category: 'Knitwear' },
-    { term: 'midi pencil skirt', velocity: '-8%', status: 'declining', category: 'Bottoms' },
-    { term: 'patent leather boots', velocity: '+34%', status: 'rising', category: 'Footwear' },
-    { term: 'pearl jewelry vintage', velocity: '+78%', status: 'rising', category: 'Jewelry' },
-    { term: 'tweed jacket', velocity: '+2%', status: 'steady', category: 'Heritage' },
-  ];
-
-  const getVelocityIcon = (status: string) => {
-    switch (status) {
-      case 'rising':
-        return <ArrowUp className="w-3 h-3 text-clean-green" />;
-      case 'declining':
-        return <ArrowDown className="w-3 h-3 text-clean-red" />;
-      default:
-        return <Minus className="w-3 h-3 text-clean-blue" />;
-    }
-  };
-
-  const getStatusBadge = (status: string) => {
-    switch (status) {
-      case 'rising':
-        return 'trend-badge-rising';
-      case 'declining':
-        return 'trend-badge-declining';
-      default:
-        return 'trend-badge-steady';
-    }
-  };
-
-  const getVelocityColor = (status: string) => {
-    switch (status) {
-      case 'rising':
-        return 'text-clean-green';
-      case 'declining':
-        return 'text-clean-red';
-      default:
-        return 'text-clean-blue';
-    }
-  };
-
   return (
-    <div className="w-96 h-screen bg-white border-l border-clean-gray-200 shadow-soft p-8 overflow-y-auto">
-      <div className="flex items-center space-x-3 mb-8">
-        <TrendingUp className="w-6 h-6 text-clean-blue" />
-        <div>
-          <h2 className="text-xl font-ibm font-semibold text-clean-gray-800">Market Intelligence</h2>
-          <p className="tech-label">Current Week Analysis</p>
+    <div className="w-80 h-screen bg-white border-l border-gray-200 shadow-subtle flex flex-col">
+      {/* Header */}
+      <div className="p-8 border-b border-gray-200">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center space-x-3">
+            <TrendingUp className="w-6 h-6 text-gray-900" />
+            <h2 className="text-xl font-ibm font-semibold text-gray-900">
+              Trending Intelligence
+            </h2>
+          </div>
+          <div className="w-2 h-2 bg-trend-green rounded-full animate-pulse" />
         </div>
+        <p className="tech-label">
+          Real-time market surveillance
+        </p>
       </div>
 
-      <div className="space-y-4">
-        {trendingTerms.map((item, index) => (
+      {/* Trending Items */}
+      <div className="flex-1 p-6 space-y-4 overflow-y-auto">
+        {trendingItems.map((item, index) => (
           <div
-            key={item.term}
-            className="group p-5 modern-card hover:bg-clean-gray-50 transition-all duration-300 cursor-pointer"
+            key={item.name}
+            className="modern-card p-6 hover:shadow-card transition-all duration-300 cursor-pointer"
           >
-            <div className="flex items-start justify-between mb-3">
-              <div className="flex items-center space-x-3">
-                <span className="text-sm font-mono text-clean-gray-400 font-medium">
-                  #{String(index + 1).padStart(2, '0')}
-                </span>
-                {getVelocityIcon(item.status)}
+            <div className="flex items-start justify-between mb-4">
+              <div className="flex-1">
+                {index === 0 ? (
+                  <h3 className="font-dancing text-2xl text-gray-900 mb-2 leading-tight">
+                    Pattern Base
+                  </h3>
+                ) : (
+                  <h3 className="font-ibm font-medium text-gray-900 text-base mb-2 leading-tight">
+                    {item.name}
+                  </h3>
+                )}
+                <div className="flex items-center space-x-3 mb-3">
+                  <span className="font-ibm font-bold text-lg text-gray-900">
+                    {item.velocity}
+                  </span>
+                  <span
+                    className={`px-2 py-1 rounded text-xs font-ibm font-medium ${
+                      item.status === 'rising'
+                        ? 'trend-badge-rising'
+                        : item.status === 'steady'
+                        ? 'trend-badge-steady'
+                        : 'trend-badge-declining'
+                    }`}
+                  >
+                    {item.status.toUpperCase()}
+                  </span>
+                </div>
               </div>
-              <span className={`text-sm font-mono font-semibold ${getVelocityColor(item.status)}`}>
-                {item.velocity}
-              </span>
             </div>
             
-            <h4 className="font-ibm font-semibold text-clean-gray-800 group-hover:text-clean-blue transition-colors duration-300 mb-3 leading-tight">
-              {item.term}
-            </h4>
+            <div className="data-divider"></div>
             
-            <div className="flex items-center justify-between">
-              <span className="tech-label bg-clean-gray-100 px-3 py-1 rounded-md border border-clean-gray-200">
-                {item.category}
-              </span>
-              <span className={`text-xs font-mono px-2 py-1 rounded-md ${getStatusBadge(item.status)}`}>
-                {item.status.charAt(0).toUpperCase() + item.status.slice(1)}
-              </span>
+            <div className="flex items-center justify-between pt-3">
+              <div className="flex items-center space-x-2">
+                <Eye className="w-4 h-4 text-gray-500" />
+                <span className="tech-label">{item.volume} searches</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Calendar className="w-4 h-4 text-gray-500" />
+                <span className="tech-label">24h</span>
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="mt-10 p-6 modern-card bg-clean-gray-50">
-        <h3 className="text-base font-ibm font-semibold text-clean-blue mb-4">Intelligence Summary</h3>
-        <div className="space-y-3 text-sm font-ibm text-clean-gray-700">
-          <div className="flex justify-between items-center">
-            <span className="tech-label">Active Surveillance:</span>
-            <span className="text-clean-blue font-mono font-semibold">1,247 terms</span>
-          </div>
-          <div className="flex justify-between items-center">
-            <span className="tech-label">Rising Trends:</span>
-            <span className="text-clean-green font-mono font-semibold">89</span>
-          </div>
-          <div className="data-divider"></div>
-          <div className="flex justify-between items-center">
-            <span className="tech-label flex items-center">
-              <Clock className="w-3 h-3 mr-1" />
-              Last Updated:
-            </span>
-            <span className="text-clean-gray-600 font-mono">3 min ago</span>
-          </div>
+      {/* Footer */}
+      <div className="p-6 border-t border-gray-200">
+        <div className="data-divider mb-4"></div>
+        <div className="flex items-center justify-center space-x-2">
+          <Target className="w-4 h-4 text-gray-500" />
+          <span className="tech-label">Intelligence Feed Active</span>
         </div>
       </div>
     </div>
