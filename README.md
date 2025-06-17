@@ -1,73 +1,65 @@
-# Welcome to your Lovable project
+# 🛰️ TrendPilot — Internal Fashion Trend Tracker
 
-## Project info
+TrendPilot is a personal, data-driven dashboard for analyzing and visualizing fashion search trends using the Pinterest Trends API. Built as a sleek, dark-themed internal tool for creative and strategic fashion forecasting.
 
-**URL**: https://lovable.dev/projects/ab803de6-3075-4001-b5fc-e3f3836aa9fd
+---
 
-## How can I edit this code?
+## ✨ Features
 
-There are several ways of editing your application.
+- 🔍 Search Pinterest fashion-related terms  
+- 📈 Visualize interest over time  
+- 🧠 Discover related trends  
+- 🌍 View demographic and regional interest (coming soon)  
+- 🛠️ Built for internal use — fast, minimal, and made to iterate
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ab803de6-3075-4001-b5fc-e3f3836aa9fd) and start prompting.
+## 📦 Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: Lovable (WIP), Tailwind CSS (dark UI)  
+- **Backend**: Node.js or Python (TBD)  
+- **Data Source**: [Pinterest Trends API](https://developers.pinterest.com/docs/api-features/trends/)  
+- **Storage**: Supabase (optional – planned for future versions)
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚧 Project Status
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+TrendPilot is currently in private development for personal use.  
+All functionality is in early-stage MVP phase with focus on:
 
-Follow these steps:
+- API integration with Pinterest  
+- Local visualization of trend data  
+- Building clean UI/UX for rapid fashion analysis
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 📜 Privacy Notice
 
-# Step 3: Install the necessary dependencies.
-npm i
+This tool is for **personal use only**. It does not collect, store, or share any personal user data.  
+See [Privacy Policy](https://gist.github.com/YOUR_GIST_LINK_HERE) for more.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## 🔗 Pinterest Developer Access
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This project requires access to the Pinterest Trends API.  
+Apply for access at: [developers.pinterest.com/apps/connect](https://developers.pinterest.com/apps/connect)
 
-**Use GitHub Codespaces**
+Required OAuth Scopes:
+- `trends.read`
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🧪 Getting Started (coming soon)
 
-This project is built with:
+Instructions for running the tool locally, setting up the API, and viewing the dashboard will be added here.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 📬 Contact
 
-Simply open [Lovable](https://lovable.dev/projects/ab803de6-3075-4001-b5fc-e3f3836aa9fd) and click on Share -> Publish.
+Made by [Charles Falkenholm](https://github.com/charlesfalkenholm)  
+📧 Email: cfalkenholm@gmail.com
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
