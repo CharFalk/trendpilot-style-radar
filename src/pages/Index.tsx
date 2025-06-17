@@ -1,4 +1,3 @@
-
 import { Sidebar } from "@/components/Sidebar";
 import { SearchSection } from "@/components/SearchSection";
 import { TrendsVisualization } from "@/components/TrendsVisualization";
@@ -21,7 +20,7 @@ const Index = () => {
                 <p className="tech-label mt-2">Fashion Intelligence & Market Surveillance</p>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-3 h-3 bg-clean-green rounded-full animate-pulse" />
+                <div className="w-3 h-3 bg-clean-gray-400 rounded-full animate-pulse" />
                 <span className="tech-label">Live Intelligence Feed</span>
               </div>
             </div>

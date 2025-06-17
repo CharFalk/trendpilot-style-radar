@@ -15,7 +15,7 @@ export const Sidebar = () => {
       {/* Logo */}
       <div className="p-8 border-b border-clean-gray-200">
         <div className="flex items-center space-x-4">
-          <div className="w-10 h-10 bg-clean-blue rounded-lg flex items-center justify-center shadow-soft">
+          <div className="w-10 h-10 bg-clean-gray-900 rounded-lg flex items-center justify-center shadow-soft">
             <Compass className="w-5 h-5 text-white" />
           </div>
           <div>
@@ -37,8 +37,8 @@ export const Sidebar = () => {
             variant={item.active ? "secondary" : "ghost"}
             className={`w-full justify-start h-12 font-ibm text-base ${
               item.active 
-                ? 'bg-clean-blue text-white shadow-soft' 
-                : 'text-clean-gray-600 hover:bg-clean-gray-100 hover:text-clean-blue'
+                ? 'bg-clean-gray-900 text-white shadow-soft' 
+                : 'text-clean-gray-600 hover:bg-clean-gray-100 hover:text-clean-gray-900'
             }`}
           >
             <item.icon className="w-5 h-5 mr-4" />

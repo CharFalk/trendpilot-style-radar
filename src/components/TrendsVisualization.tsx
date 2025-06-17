@@ -25,7 +25,7 @@ export const TrendsVisualization = () => {
             <h3 className="text-xl font-ibm font-semibold text-clean-gray-800">Interest Over Time</h3>
             <p className="text-sm font-ibm text-clean-gray-500 mt-1">Search volume analysis</p>
           </div>
-          <TrendingUp className="w-6 h-6 text-clean-blue" />
+          <TrendingUp className="w-6 h-6 text-clean-gray-900" />
         </div>
         
         <div className="h-80 relative">
@@ -48,7 +48,7 @@ export const TrendsVisualization = () => {
             {mockChartData.map((data, index) => (
               <div key={data.month} className="flex flex-col items-center space-y-3">
                 <div 
-                  className="w-12 bg-gradient-to-t from-clean-blue to-clean-blue/80 rounded-t-lg transition-all duration-700 hover:from-clean-pink hover:to-clean-blue cursor-pointer shadow-soft"
+                  className="w-12 bg-gradient-to-t from-clean-gray-800 to-clean-gray-600 rounded-t-lg transition-all duration-700 hover:from-clean-gray-900 hover:to-clean-gray-800 cursor-pointer shadow-soft"
                   style={{ height: `${data.value}%` }}
                 />
                 <span className="tech-label">{data.month}</span>
@@ -72,7 +72,7 @@ export const TrendsVisualization = () => {
             <h3 className="text-xl font-ibm font-semibold text-clean-gray-800">Market Intelligence</h3>
             <p className="text-sm font-ibm text-clean-gray-500 mt-1">Related trend surveillance</p>
           </div>
-          <Target className="w-6 h-6 text-clean-blue" />
+          <Target className="w-6 h-6 text-clean-gray-900" />
         </div>
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -81,7 +81,7 @@ export const TrendsVisualization = () => {
               key={trend}
               className="px-4 py-3 bg-clean-gray-50 border border-clean-gray-200 rounded-lg hover:bg-clean-gray-100 cursor-pointer transition-all duration-300 shadow-soft hover:shadow-card"
             >
-              <span className="font-ibm text-clean-gray-700 hover:text-clean-blue transition-colors duration-300 text-sm">
+              <span className="font-ibm text-clean-gray-700 hover:text-clean-gray-900 transition-colors duration-300 text-sm">
                 {trend}
               </span>
             </div>

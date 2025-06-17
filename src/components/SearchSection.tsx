@@ -27,7 +27,7 @@ export const SearchSection = () => {
           <h2 className="text-xl font-ibm font-semibold text-clean-gray-800">Intelligence Tracking</h2>
           <p className="text-sm font-ibm text-clean-gray-500 mt-1">Monitor fashion market signals</p>
         </div>
-        <Button variant="outline" size="sm" className="border-clean-gray-300 bg-white text-clean-gray-600 hover:bg-clean-gray-50 hover:text-clean-blue font-ibm">
+        <Button variant="outline" size="sm" className="border-clean-gray-300 bg-white text-clean-gray-600 hover:bg-clean-gray-50 hover:text-clean-gray-900 font-ibm">
           <Filter className="w-4 h-4 mr-2" />
           Configure Filters
         </Button>
@@ -42,13 +42,13 @@ export const SearchSection = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="e.g. cashmere turtleneck, wool blazer oversized..."
-            className="pl-12 h-12 bg-clean-gray-50 border-clean-gray-300 focus:border-clean-blue focus:ring-clean-blue/20 text-clean-gray-800 font-ibm"
+            className="pl-12 h-12 bg-clean-gray-50 border-clean-gray-300 focus:border-clean-gray-900 focus:ring-clean-gray-900/20 text-clean-gray-800 font-ibm"
             onKeyPress={(e) => e.key === 'Enter' && handleAddTerm()}
           />
         </div>
         <Button 
           onClick={handleAddTerm}
-          className="bg-clean-blue hover:bg-clean-blue/90 text-white font-ibm font-medium h-12 px-6 shadow-soft"
+          className="bg-clean-gray-900 hover:bg-clean-gray-800 text-white font-ibm font-medium h-12 px-6 shadow-soft"
         >
           <Plus className="w-4 h-4 mr-2" />
           Track Signal
@@ -58,7 +58,7 @@ export const SearchSection = () => {
       {trackedTerms.length > 0 && (
         <div className="space-y-4">
           <div className="flex items-center space-x-2">
-            <Target className="w-4 h-4 text-clean-blue" />
+            <Target className="w-4 h-4 text-clean-gray-900" />
             <p className="tech-label">Active surveillance targets:</p>
           </div>
           <div className="flex flex-wrap gap-3">
